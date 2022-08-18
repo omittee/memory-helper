@@ -13,6 +13,8 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": false,
     "types": [
       "webpack-env"
     ],
@@ -28,12 +30,20 @@
       "scripthost"
     ]
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "*.ts",
+    "server/**/*.ts",
+    "server/**/*.tsx",
   ],
   "exclude": [
     "node_modules"

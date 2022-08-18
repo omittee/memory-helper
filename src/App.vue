@@ -1,30 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <van-tabbar v-model="active">
+    <van-tabbar-item icon="home-o">
+      <router-link to="/">首页</router-link>
+    </van-tabbar-item>
+    <van-tabbar-item icon="guide-o">
+      <router-link to="/discover">发现</router-link>
+    </van-tabbar-item>
+    <van-tabbar-item icon="user-o">
+      <router-link to="/me">我的</router-link>
+    </van-tabbar-item>
+  </van-tabbar>
+
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component"></component>
+    </keep-alive>
+  </router-view>
 </template>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.van-tabbar {
+  z-index: 999;
+  .van-tabbar-item--active .router-link-active {
+    color: var(--van-primary-color);
   }
 }
 </style>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const active = ref(0);
+    return { active };
+  },
+};
+</script>
