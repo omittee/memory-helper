@@ -3,7 +3,7 @@
 
 ```
 memory-helper
-├── app.ts                  ## koa入口文件
+├── app.ts                  # koa入口文件
 ├── babel.config.js
 ├── components.d.ts
 ├── package-lock.json
@@ -18,7 +18,7 @@ memory-helper
 │   │   ├── switchUser.png
 │   │   └── userExit.png
 │   └── index.html
-├── server                  ## 服务端
+├── server                  # 服务端
 │   ├── config
 │   │   ├── db.ts
 │   │   └── jwt.ts
@@ -35,7 +35,7 @@ memory-helper
 │       ├── info.ts
 │       ├── init-models.ts
 │       └── users.ts
-├── src                     ## 客户端
+├── src                     # 客户端
 │   ├── App.vue
 │   ├── assets
 │   │   └── logo.png
